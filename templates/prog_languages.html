@@ -1,0 +1,8 @@
+{% for i in prog_lang %}
+
+<img src="{{ i.image.url }}" alt="" width="300" height="400">
+<h1>{{ i.title }}</h1>
+<p> <a href="/prog_lang/{{ i.id }}/">Подробнее</a> </p>
+
+
+{% endfor %}
