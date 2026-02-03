@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'prog_lang',
+    'relation_db',
 ]
 
 MIDDLEWARE = [

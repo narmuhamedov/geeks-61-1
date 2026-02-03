@@ -1,0 +1,26 @@
+<h1>Список машин с тегами</h1>
+
+{% for i in nummer_car %}
+
+<p>{{ i.nameCar }}</p>
+    
+<p>Теги</p>
+    {% for j in i.tags.all %}
+    <p> #{{ j.name }}</p>
+    {% endfor %}
+
+<p>Комменты</p>
+{% for k in i.review.all %}
+
+<p>{{ k.marks }}</p>
+<p>{{ k.text }}</p>
+<p>{{ k.created_at }}</p>
+
+    {% endfor %}
+
+
+{% endfor %}
+
+
+
+

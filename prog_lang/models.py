@@ -10,6 +10,11 @@ class ProgLang(models.Model):
     image = models.ImageField(upload_to='proglang/', verbose_name='загрузите фото')
     #PostiveIntergerField - указывает на то что нужно загружать только положительные числа, атрибут blank=True указывает что поле не обязательное для заполнения 
     created_date_lang = models.PositiveIntegerField(verbose_name='укажите год создания языка', blank=True)
+    
+    file_python = models.FileField(upload_to='files/', verbose_name='загрузите какой нибудь файл', null=True)
+
+    viki_url = models.URLField(verbose_name='вставьте ссылку с википедии', null=True)
+
     #DateTimeField - показывает дату и время  auto_now_add=True- подключает к системному времени
     created_at = models.DateTimeField(auto_now_add=True)
 
