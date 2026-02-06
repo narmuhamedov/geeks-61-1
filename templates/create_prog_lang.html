@@ -1,0 +1,14 @@
+<center>
+    <h1>Добавить язык программирования</h1>
+
+    <form action="/create_prog_lang/" method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Добавить</button>
+
+
+    </form>
+</center>
