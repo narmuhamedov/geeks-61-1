@@ -13,4 +13,11 @@
 <p> <a href="/prog_lang/{{ i.id }}/update/">Редактировать</a> </p>
 {% endfor %}
 
+
+<form action="/login/" method="post">
+    {%  csrf_token  %}
+    <button type="submit">Выйти из аккаунта</button>
+</form> 
+
+
 </center>

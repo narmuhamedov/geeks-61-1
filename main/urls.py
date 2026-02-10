@@ -9,6 +9,7 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('', include('prog_lang.urls')),
     path('', include('relation_db.urls')),
+    path('', include('users.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'blog',
     'prog_lang',
     'relation_db',
+    'users',
 ]
 
 MIDDLEWARE = [
