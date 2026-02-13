@@ -1,5 +1,28 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from . import models, forms
+from django.core.paginator import Paginator
+
+#search
+
+def search_view(request):
+    query = request.GET.get("s", '')
+    if query:
+        prog_lang = models.ProgLang.objects.filter(title__icontains=query)
+    else:
+        prog_lang = models.ProgLang.objects.none
+    
+    return render(
+        request,
+        'prog_languages.html',
+        {
+            "prog_lang": prog_lang,
+        }
+
+    )
+
+
+
+
 
 
 
@@ -86,11 +109,14 @@ def prog_lang_detail_view(request, id):
 def prog_lang_list_view(request):
     if request.method == "GET":
         prog_lang = models.ProgLang.objects.all()
+        paginator = Paginator(prog_lang, 2)
+        page = request.GET.get("page")
+        page_obj = paginator.get_page(page)
         return render(
             request,
             'prog_languages.html',
             {
-                "prog_lang": prog_lang
+                "prog_lang": page_obj
             }
         )
 
